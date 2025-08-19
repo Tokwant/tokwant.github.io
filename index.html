@@ -140,19 +140,18 @@ window.addEventListener('scroll', () => {
 
 function openMessenger() {
     const pageId = "771059329419352";
+    const messengerWebUrl = `https://www.facebook.com/messages/t/${pageId}`;
+    const messengerAppUrl = `fb-messenger://user-thread/${pageId}`;
     const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isMobile) {
-        // Open Messenger app
-        window.location.href = `fb-messenger://user-thread/${pageId}`;
-        
-        // Fallback (if app not installed)
+        window.location.href = messengerAppUrl;
+
         setTimeout(() => {
-            window.open(`https://www.facebook.com/messages/t/${pageId}`, "_blank");
-        }, 1500);
+            window.open(messengerWebUrl, "_blank");
+        }, 1200);
     } else {
-        // Desktop (open in browser)
-        window.open(`https://www.facebook.com/messages/t/${pageId}`, "_blank");
+        window.open(messengerWebUrl, "_blank");
     }
 }
 </script>
