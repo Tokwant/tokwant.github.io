@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tokwant Official Page</title>
+<link rel="icon" type="image/png" href="0LOGO-FRONT.png">
+<link rel="stylesheet" href="style.css">
+<style>
+    .h-card {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(246,225,196,0.15);
+      border-radius: 20px;
+      border: 2px dashed #82512f;
+      text-align: center;
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      transition: transform 0.2s ease-out;
+      will-change: transform;
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- TOP IMAGE -->
+<div class="top-image">
+  <a href="index.html">
+    <img src="0LOGO-FRONTV2.png" alt="Tokwant Logo">
+  </a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="nav-links">
+        <a href="index.html"><u>Home</u></a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<br>
+<div class="h-container">
+    <div class="h-card">
+        <img src="home-logo.png" alt="Sticker" class="h-sticker">
+        <p class="h-text-v1"><br>Crispy outside, soft inside!</p>
+        <p class="h-text-v2">Breaded & Fried<br>Tofu Squares</p>
+        <p class="h-text-v3">We have flavorful, protein-packed snacks made from locally-sourced
+        tofu, promoting a healthier lifestyle one square at a time. Tokwant has customizable flavors to appeal to both young
+        and mature markets.<br><br>Every bite of Tokwant delivers a perfect balance of crunch and tenderness-crispy on the outside, soft and flavorful on the inside. Made from fresh, locally-sourced tofu, our protein-packed squares are not just snacks, but something you'll feel good about. With customizable flavors that cater to adventurous foodies, kids, and adults alike, Tokwant makes plant-based snacking deliciously satisfying and fun.</p>
+        
+        <!-- ORDER BUTTON -->
+        <button class="h-order-btn" onclick="window.open('https://www.facebook.com/messages/t/771059329419352','_blank')">
+            Order Now!
+        </button>
+    </div>
+</div>
+<br><br>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LOGO -->
+    <div class="footer-section">
+      <img src="0LOGO-FRONTV2.png" alt="Tokwant Logo" class="footer-logo">
+
+      <!-- SOCIAL MEDIA -->
+      <div class="footer-social">
+        <p>Follow Us:</p>
+        <ul>
+        <li><a href="https://www.facebook.com/profile.php?id=61579191283282" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/tokwant.ph?igsh=Z3cwbmQ0MXVsZDNm" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="footer-section">
+      <h4>OVERVIEW</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="footer-section">
+      <h4>PRODUCTS</h4>
+      <ul>
+        <li>Tofu Squares (Sisig sauce)</li>
+        <li>Tofu Squares (Cheese sauce)</li>
+        <li>Tofu Squares (Garlic mayonnaise sauce)</li>
+      </ul>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="footer-section">
+      <h4>ADD-ONS</h4>
+      <ul>
+        <li>Sisig sauce</li>
+        <li>Cheese sauce</li>
+        <li>Garlic mayonnaise sauce</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    © Tokwant
+  </div>
+</footer>
+
+<script>
+let lastScrollY = window.scrollY;
+const card = document.querySelector('.h-card');
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+
+    // Amplify the movement
+    const movement = Math.max(Math.min(delta * 0.7, 40), -40); // move up to ±40px
+    const rotation = Math.max(Math.min(delta * 0.1, 5), -5);  // rotate up to ±5deg
+
+    card.style.transform = `translateY(${-movement}px) rotate(${rotation}deg)`;
+
+    clearTimeout(card._timeout);
+
+    // Reset position and rotation after scrolling stops
+    card._timeout = setTimeout(() => {
+        card.style.transform = 'translateY(0) rotate(0deg)';
+    }, 100);
+
+    lastScrollY = currentScrollY;
+});
+</script>
+
+</body>
+</html>
