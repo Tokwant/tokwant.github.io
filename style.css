@@ -386,13 +386,13 @@ body::before {
 
 .a-dialogue-box {
     position: absolute;
-    left: 40%;   
-    top: 75%;   
+    left: 35%;   
+    top: 75%;
     background: rgb(254,228,170,1);
     border: 2.5px dashed #82512f;
     padding: 20px;
     border-radius: 12px;
-    width: 800px;
+    width: 750px;
     height: auto;
     color: #333;
     font-size: 16px;
