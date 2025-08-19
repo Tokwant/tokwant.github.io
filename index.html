@@ -51,7 +51,7 @@
         and mature markets.<br><br>Every bite of Tokwant delivers a perfect balance of crunch and tenderness-crispy on the outside, soft and flavorful on the inside. Made from fresh, locally-sourced tofu, our protein-packed squares are not just snacks, but something you'll feel good about. With customizable flavors that cater to adventurous foodies, kids, and adults alike, Tokwant makes plant-based snacking deliciously satisfying and fun.</p>
         
         <!-- ORDER BUTTON -->
-        <button class="h-order-btn" onclick="window.open('https://www.facebook.com/messages/t/771059329419352','_blank')">
+        <button class="h-order-btn" onclick="openMessenger()">
             Order Now!
         </button>
     </div>
@@ -137,6 +137,24 @@ window.addEventListener('scroll', () => {
 
     lastScrollY = currentScrollY;
 });
+
+function openMessenger() {
+    const pageId = "771059329419352";
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Open Messenger app
+        window.location.href = `fb-messenger://user-thread/${pageId}`;
+        
+        // Fallback (if app not installed)
+        setTimeout(() => {
+            window.open(`https://www.facebook.com/messages/t/${pageId}`, "_blank");
+        }, 1500);
+    } else {
+        // Desktop (open in browser)
+        window.open(`https://www.facebook.com/messages/t/${pageId}`, "_blank");
+    }
+}
 </script>
 
 </body>
