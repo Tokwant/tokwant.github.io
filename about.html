@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.a-dialogue-box {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- TOP IMAGE -->
+<div class="top-image">
+  <a href="index.html">
+    <img src="0LOGO-FRONTV2.png" alt="Tokwant Logo">
+  </a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html"><u>About</u></a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<br>
+
+<!-- ABOUT IMAGE WITH DIALOGUE -->
+<div class="a-about-container">
+    <img src="about-image.png" alt="About Image" class="a-about-image">
+    <div class="a-dialogue-box">
+        <p class="a-class1"><b>Tokwant</b></p>
+        <p class="a-class2">About Our Tofu Squares</p>
+        <p class="a-class3">Tokwant is a local snack brand that turns simple tofu into something fun, flavorful, and unforgettable. Our crispy-on-the-outside, soft-on-the-inside tofu squares are made from fresh, locally sourced ingredients and paired with exciting dips like sisig sauce, cheese sauce, and garlic mayo.
+        <br><br>
+        Perfect for students, professionals, and families alike, Tokwant makes healthy eating both accessible and enjoyable. With affordable prices, and customizable flavors, we're here to bring protein-packed snacking to canteens, campuses, and online platforms—one tasty square at a time.
+        </p>
+    </div>
+</div>
+
+<br><br><br>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LOGO -->
+    <div class="footer-section">
+      <img src="0LOGO-FRONTV2.png" alt="Tokwant Logo" class="footer-logo">
+
+      <!-- SOCIAL MEDIA -->
+      <div class="footer-social">
+        <p>Follow Us:</p>
+        <ul>
+        <li><a href="https://www.facebook.com/profile.php?id=61579191283282" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/tokwant.ph?igsh=Z3cwbmQ0MXVsZDNm" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="footer-section">
+      <h4>OVERVIEW</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="footer-section">
+      <h4>PRODUCTS</h4>
+      <ul>
+        <li>Tofu Squares (Sisig sauce)</li>
+        <li>Tofu Squares (Cheese sauce)</li>
+        <li>Tofu Squares (Garlic mayonnaise sauce)</li>
+      </ul>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="footer-section">
+      <h4>ADD-ONS</h4>
+      <ul>
+        <li>Sisig sauce</li>
+        <li>Cheese sauce</li>
+        <li>Garlic mayonnaise sauce</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    © Tokwant
+  </div>
+</footer>
+
+<script>
+let lastScroll = 0;
+const dialogue = document.querySelector('.a-dialogue-box');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    const delta = currentScroll - lastScroll;
+
+    dialogue.style.transform = `translateY(${-delta * 0.5}px)`;
+
+    clearTimeout(dialogue.wiggleTimeout);
+    dialogue.wiggleTimeout = setTimeout(() => {
+        dialogue.style.transform = 'translateY(0)';
+    }, 100);
+
+    lastScroll = currentScroll;
+});
+</script>
+
+</body>
+</html>
