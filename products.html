@@ -175,8 +175,8 @@
       <div id="modal-ingredients-list"></div>
     </div>
     <div class="modal-buttons">
-      <button class="close-btn" onclick="closeModal()">Close</button>
       <button class="order-btn" onclick="orderNow()">Order Now</button>
+      <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
   </div>
 </div>
@@ -273,7 +273,22 @@ function openModal(imgSrc, title, price, ingredients) {
 }
 
 function orderNow() {
-  window.open("https://www.facebook.com/messages/t/771059329419352", "_blank");
+  const pageId = "771059329419352";
+  const webLink = "https://www.facebook.com/messages/t/" + pageId;
+  const appLink = "fb-messenger://user-thread/" + pageId;
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    window.location.href = appLink;
+
+    setTimeout(() => {
+      window.location.href = webLink;
+    }, 600);
+  } else {
+
+    window.open(webLink, "_blank");
+  }
 }
 </script>
 
