@@ -109,7 +109,7 @@ body::before {
 }
 
 .item-price {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     margin-bottom: 10px;
 }
@@ -559,3 +559,4 @@ body::before {
     align-items: center;
     z-index: 999;
 }
+
