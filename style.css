@@ -109,7 +109,7 @@ body::before {
 }
 
 .item-price {
-    font-size: 35px;
+    font-size: 20px;
     color: white;
     margin-bottom: 10px;
 }
@@ -560,4 +560,9 @@ body::before {
     z-index: 999;
 }
 
-
+.pro-post-date .pro-description {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 2;
+    margin-top: 20px;
+}
